@@ -18,7 +18,7 @@ public class Main
         int[] number_list = new int[num_inputs];
 
         // Current median
-        int median = 0;
+        double median = 0;
 
         // Put into list
         for (int i = 0; i < num_inputs; i++) {
@@ -38,7 +38,7 @@ public class Main
 
             // Find median
             if (min_heap.size() == max_heap.size()) {
-                median = (min_heap.peek() + max_heap.peek())/2;
+                median = (min_heap.peek() + max_heap.peek())/2.0;
             } else if (min_heap.size() > max_heap.size()) {
                 median = min_heap.peek();
             } else {
