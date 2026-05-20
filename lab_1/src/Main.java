@@ -13,7 +13,6 @@ public class Main
 
         // Instantiate
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter input:\n");
 
         int num_inputs = input.nextInt();  // Read user input
         int[] number_list = new int[num_inputs];
@@ -29,21 +28,18 @@ public class Main
             if (number_list[i] > median)    { max_heap.add(number_list[i]); }
             else                            { min_heap.add(number_list[i]); }
 
-            // Get sizes
-            int min_heap_size = min_heap.size();
-            int max_heap_size = max_heap.size();
 
             // rebalance
-            if (min_heap_size > max_heap_size + 1) {
+            if (min_heap.size() > max_heap.size() + 1) {
                 max_heap.add(min_heap.poll());
-            } else if (max_heap_size > min_heap_size + 1) {
+            } else if (max_heap.size() > min_heap.size() + 1) {
                 min_heap.add(max_heap.poll());
             }
 
             // Find median
-            if (min_heap_size == max_heap_size) {
+            if (min_heap.size() == max_heap.size()) {
                 median = (min_heap.peek() + max_heap.peek())/2;
-            } else if (min_heap_size > max_heap_size) {
+            } else if (min_heap.size() > max_heap.size()) {
                 median = min_heap.peek();
             } else {
                 median = max_heap.peek();
