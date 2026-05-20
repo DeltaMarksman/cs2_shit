@@ -1,4 +1,5 @@
 import java.nio.file.ClosedWatchServiceException;
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;  // Import the Scanner class
 
@@ -9,7 +10,7 @@ public class Main
     {
         // Priority Queue Min Type
         PriorityQueue<Integer> min_heap = new PriorityQueue<>();
-        PriorityQueue<Integer> max_heap = new PriorityQueue<>();
+        PriorityQueue<Integer> max_heap = new PriorityQueue<>(Collections.reverseOrder());
 
         // Instantiate
         Scanner input = new Scanner(System.in);
